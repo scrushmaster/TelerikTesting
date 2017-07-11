@@ -1,0 +1,59 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <RootNamespace>Commons</RootNamespace>
+    <AssemblyName>Commons</AssemblyName>
+    <OutputPath>bin</OutputPath>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ArtOfTest.WebAii, Version=2017.2.530.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ArtOfTest.WebAii.Design, Version=2017.2.530.0, Culture=neutral, PublicKeyToken=4fc62bbc3827ab1d">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Telerik.TestingFramework.Controls.KendoUI, Version=2017.2.530.0, Culture=neutral, PublicKeyToken=528163f3e645de45">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.WebAii.Controls.Html, Version=2017.2.530.0, Culture=neutral, PublicKeyToken=528163f3e645de45">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.WebAii.Controls.Xaml, Version=2017.2.530.0, Culture=neutral, PublicKeyToken=528163f3e645de45">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.WebAii.Controls.Xaml.Wpf, Version=2017.2.530.0, Culture=neutral, PublicKeyToken=528163f3e645de45">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LoginToTrainingModule.tstest" />
+    <None Include="Settings.aiis" />
+    <None Include="VerifyLoginLandingPage.tstest" />
+    <Compile Include="LoginToTrainingModule.tstest.cs">
+      <DependentUpon>LoginToTrainingModule.tstest</DependentUpon>
+    </Compile>
+    <Compile Include="VerifyLoginLandingPage.tstest.cs">
+      <DependentUpon>VerifyLoginLandingPage.tstest</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LoginToTrainingModule.resx">
+      <DependentUpon>LoginToTrainingModule.tstest</DependentUpon>
+    </None>
+    <None Include="VerifyLoginLandingPage.resx">
+      <DependentUpon>VerifyLoginLandingPage.tstest</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Name="Commons" Version="2017.2.517.0" VsProjectLanguage="CSharp" xmlns="" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Condition="true" Project="$(MSBuildExtensionsPath)\Telerik\WebUITestStudio\Telerik.WebUITestStudio.targets" />
+</Project>
